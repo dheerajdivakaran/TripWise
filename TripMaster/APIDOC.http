@@ -1,0 +1,74 @@
+###
+post http://127.0.0.1:8000/register/
+Content-Type: application/json
+
+{
+    "username": "faheem",
+    "password": "faheem@123",
+    "email": "faheem@gmail.com"
+}
+
+
+###
+GET http://127.0.0.1:8000/user/
+Accept: application/json
+
+
+###
+GET http://127.0.0.1:8000/trips/
+Accept: application/json
+Authorization: Basic faheem:faheem@123
+
+
+
+
+###
+POST http://127.0.0.1:8000/trips/
+Content-Type: application/json
+Authorization: Basic faheem:faheem@123
+
+{
+    "title": "trip to america",
+    "start_date": "2023-10-11",
+    "destination": "america"
+}
+
+###
+GET http://127.0.0.1:8000/trip/5/
+Accept: application/json
+Authorization: Basic faheem:faheem@123
+
+
+###
+PUT http://127.0.0.1:8000/trip/5/
+Content-Type: application/json
+Authorization: Basic faheem:faheem@123
+
+{
+    "title": "trip to italy",
+    "start_date": "2023-10-22",
+    "destination": "italy"
+}
+
+###
+DELETE http://127.0.0.1:8000/trip/3/
+Authorization: Basic faheem:faheem@123
+
+
+###
+GET http://127.0.0.1:8000/trip/5/members/
+Accept: application/json
+Authorization:Basic faheem:faheem@123
+
+###
+POST http://127.0.0.1:8000/trip/5/members/
+Content-Type: application/json
+Authorization:Basic faheem:faheem@123
+
+{
+    "username" : "abhinand"
+}
+
+###
+DELETE http://127.0.0.1:8000/trip/5/members/2/
+Authorization:Basic faheem:faheem@123
